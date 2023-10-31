@@ -5,27 +5,27 @@ import Link from 'next/link';
 import { INavigation } from '@/types/contentful';
 import Logo from '@/public/Nexus_Ambition.svg';
 
-import classNames from 'classnames';
+// import classNames from 'classnames';
 
-import { handleErrors } from '@/lib/helperfunctions';
-import { useNinetailed } from '@ninetailed/experience.js-next';
+// import { handleErrors } from '@/lib/helperfunctions';
+// import { useNinetailed } from '@ninetailed/experience.js-next';
 
 export const Navigation = ({ fields }: INavigation) => {
-  const [loggingIn, setLoggingIn] = React.useState<boolean>(false);
-  const [registering, setRegistering] = React.useState<boolean>(false);
-  const { identify } = useNinetailed();
-  const handleLogin = handleErrors(async () => {
-    setLoggingIn(true);
-    await identify('', { pricingplan: 'lite' });
-    setLoggingIn(false);
-  });
+  // const [loggingIn, setLoggingIn] = React.useState<boolean>(false);
+  // const [registering, setRegistering] = React.useState<boolean>(false);
+  // const { identify } = useNinetailed();
+  // const handleLogin = handleErrors(async () => {
+  //   setLoggingIn(true);
+  //   await identify('', { pricingplan: 'lite' });
+  //   setLoggingIn(false);
+  // });
 
-  const handleRegistration = handleErrors(async () => {
-    setRegistering(true);
-    // This is a hard-coded Segment user_id for demo purposes
-    await identify('6468b4e5', { pricingplan: 'growth' });
-    setRegistering(false);
-  });
+  // const handleRegistration = handleErrors(async () => {
+  //   setRegistering(true);
+  //   // This is a hard-coded Segment user_id for demo purposes
+  //   await identify('6468b4e5', { pricingplan: 'growth' });
+  //   setRegistering(false);
+  // });
 
   return (
     <header className="bg-white">

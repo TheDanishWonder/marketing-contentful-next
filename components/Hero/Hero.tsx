@@ -28,15 +28,6 @@ export const Hero = ({ sys, fields }: IHero) => {
     },
   };
 
-  const bgImageStyle = {
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-    height: '90vh',
-    width: '100%',
-    backgroundImage: `url(https:${updatedHero.fields.image.fields.file.url})`,
-  }
-
   return (
     <Experience
       {...heroLayoutSetting}
