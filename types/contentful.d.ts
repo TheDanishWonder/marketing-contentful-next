@@ -71,6 +71,34 @@ export interface IButton extends Entry<IButtonFields> {
   };
 }
 
+export interface ILinkFields {
+  /** Internal name */
+  internalName: string;
+
+  /** Button text */
+  linkText: string;
+
+  /** slug */
+  slug: string;
+}
+
+export interface ILink extends Entry<ILinkFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'link';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface IConfigFields {
   /** Internal Name */
   name: 'Configuration';
@@ -166,6 +194,42 @@ export interface IFeature extends Entry<IFeatureFields> {
     contentType: {
       sys: {
         id: 'feature';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
+export interface ITwoBlockColumnFields {
+  /** Internal name */
+  internalName?: string | undefined;
+
+  /** Headline */
+  headline: Document;
+
+  /** Subline */
+  subline?: Document | undefined;
+
+  /** Button */
+  link?: ILink | undefined;
+
+  /** Image */
+  services: ILink[] | undefined;
+
+  turnPink: boolean;
+}
+
+export interface ITwoBlockColumn extends Entry<ITwoBlockColumnFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'twoColumnBlock';
         linkType: 'ContentType';
         type: 'Link';
       };

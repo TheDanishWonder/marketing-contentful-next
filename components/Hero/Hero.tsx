@@ -60,16 +60,14 @@ export const Hero = ({ sys, fields }: IHero) => {
                   layoutStyles[layout].direction
                 )}
               >
-                <div className="lg:mt-20 lg:w-1/2">
-                  <div className="mt-6 bg-white bg-opacity-30 backdrop-blur-md p-4 rounded-xl">
+                <div className="lg:mt-20 w-4/6">
+                  <div className=" w-fit bg-black bg-opacity-20 backdrop-blur-md p-4 rounded-xl">
                     <RichText
                       {...ContentfulLivePreview.getProps({
                         entryId: updatedHero.sys.id,
                         fieldId: 'headline',
                       })}
-                      className={classNames(
-                        'font-extrabold text-gray-900 tracking-tight hero__headline'
-                      )}
+                      className="text-3xl text-white"
                       richTextDocument={updatedHero.fields.headline}
                     />
                     <RichText
@@ -77,7 +75,10 @@ export const Hero = ({ sys, fields }: IHero) => {
                         entryId: updatedHero.sys.id,
                         fieldId: 'subline',
                       })}
-                      className="mt-6 text-xl text-gray-700"
+                      className={classNames(
+                        'font-extrabold text-white mt-6 tracking-tight hero__headline'
+                      )}
+
                       richTextDocument={updatedHero.fields.subline}
                     />
                   </div>
@@ -122,7 +123,7 @@ export const Hero = ({ sys, fields }: IHero) => {
                         className={classNames(
                           'absolute inset-y-0 left-1/2  rounded-l-3xl lg:left-80 lg:right-0',
                           {
-                            'bg-gray-50 w-screen': layout === 'default',
+                            'bg-gray-50 ': layout === 'default',
                           },
                           {
                             'bg-amber-200 blur-2xl m-20 w-full':

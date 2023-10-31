@@ -1,7 +1,7 @@
 import { ImageLoader } from 'next/image';
 
 export const ContentfulImageLoader: ImageLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality ?? 50}`;
+  return `${src}?w=${width}&q=${quality ?? 75}`;
 };
 
 export function handleErrors<A extends unknown[]>(

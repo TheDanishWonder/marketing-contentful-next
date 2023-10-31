@@ -9,7 +9,7 @@ export const Footer = ({ fields }: IFooter) => {
   const { reset } = useNinetailed();
   return (
     <footer className="bg-gray-800">
-      <div className="max-w-7xl mt-16 mx-auto py-12 px-2 overflow-hidden sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-12 px-2 overflow-hidden sm:px-6 lg:px-8">
         <nav
           className="-mx-1 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"

@@ -29,11 +29,15 @@ const Page = ({ page }: { page: IPage }) => {
       />
       <div className="w-full h-full flex flex-col">
         {banner && <BlockRenderer block={banner} />}
+        <header>
         {navigation && <BlockRenderer block={navigation} />}
-        <main className="grow">
+        </header>
+        <main>
           <BlockRenderer block={sections} />
         </main>
+        <footer>
         {footer && <BlockRenderer block={footer} />}
+        </footer>
       </div>
     </>
   );

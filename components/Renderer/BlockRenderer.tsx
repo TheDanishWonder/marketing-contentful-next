@@ -12,6 +12,9 @@ import { Footer } from '@/components/Footer';
 import { PricingTable } from '@/components/PricingTable';
 import { PricingPlan } from '@/components/PricingPlan';
 import { HubspotForm } from '@/components/HubspotForm';
+import { TwoBlockColumn } from '@/components/TwoColumnBlock';
+
+
 
 import {
   IBanner,
@@ -22,6 +25,7 @@ import {
   INavigation,
   IPricingPlan,
   IPricingTable,
+  ITwoBlockColumn,
 } from '@/types/contentful';
 
 import { ComponentContentTypes } from '@/lib/constants';
@@ -30,6 +34,7 @@ import { parseExperiences, singularOrArrayBlock } from '@/lib/experiences';
 const ContentTypeMap = {
   [ComponentContentTypes.Hero]: Hero,
   [ComponentContentTypes.CTA]: CTA,
+  [ComponentContentTypes.TwoBlockColumn]: TwoBlockColumn,
   [ComponentContentTypes.Feature]: Feature,
   [ComponentContentTypes.Banner]: Banner,
   [ComponentContentTypes.Navigation]: Navigation,
@@ -42,6 +47,7 @@ const ContentTypeMap = {
 type Component =
   | IHero
   | ICta
+  | ITwoBlockColumn
   | IBanner
   | INavigation
   | IFooter
@@ -80,13 +86,13 @@ export const BlockRenderer = ({ block }: { block: singularOrArrayBlock }) => {
   const parsedExperiences = parseExperiences(block);
 
   return (
-    <div key={`${contentTypeId}-${id}`}>
+    <section id={`${contentTypeId}-${id}`} key={`${contentTypeId}-${id}`}>
       <Experience
         {...block}
         id={id}
         component={ComponentRenderer}
         experiences={parsedExperiences}
       />
-    </div>
+    </section>
   );
 };
