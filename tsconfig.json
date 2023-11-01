@@ -123,7 +123,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "pages/_middleware.js"  ],
   "exclude": [
     "node_modules"
   ]
